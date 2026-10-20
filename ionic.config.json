@@ -1,0 +1,7 @@
+{
+  "name": "holamundo-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
