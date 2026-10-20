@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input placeholder="Enter a username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" placeholder="Enter a password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="IrHome()">Login</ion-button>
+</ion-content>
