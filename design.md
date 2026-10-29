@@ -1,12 +1,11 @@
 ---
 version: "alpha"
-name: "Liquid Glass"
-description: "Premium liquid glass effect with morphing shapes, flowing animations, chromatic aberration, iridescent gradients, smooth 400-600ms transitions. Ideal for landing pages, saas. AI-ready template."
+name: "Soft UI Evolution"
+description: "Design evolved neumorphism with improved contrast (WCAG AA+), modern aesthetics, subtle depth, accessibility focus. Ideal for landing pages, saas. AI-ready template."
 colors:
-  primary: "#1A1A1A"
-  secondary: "#4A4A4A"
-  tertiary: "#0066FF"
-  neutral: "#FFFFFF"
+  primary: "#87CEEB"
+  secondary: "#FFB6C1"
+  tertiary: "#90EE90"
 typography:
   h1:
     fontFamily: System UI stack
@@ -20,28 +19,39 @@ typography:
     fontFamily: System UI stack
     fontSize: 0.75rem
     fontWeight: 500
+rounded:
+  sm: 10px
+  md: 20px
+  lg: 30px
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    rounded: "{rounded.sm}"
+    padding: 12px
 ---
 
 ## Overview
 
-Premium liquid glass effect with morphing shapes, flowing animations, chromatic aberration, iridescent gradients, smooth 400-600ms transitions. Ideal for landing pages, saas. AI-ready template. Glassmorphism landed around 2020 as a static effect — frosted panels, backdrop-blur, maybe a subtle border. It looked gorgeous in Dribbble shots and fell apart in production. The blur was expensive, the layering was fragile, and honestly? It got stale fast. But the underlying idea — depth through translucency — had legs.
+Design evolved neumorphism with improved contrast (WCAG AA+), modern aesthetics, subtle depth, accessibility focus. Ideal for landing pages, saas. AI-ready template. Remember 2020 neumorphism? That beautiful disaster. Designers lost their minds over those puffy, extruded buttons — and then watched usability testers fail to distinguish active states from disabled ones. The contrast ratios were abysmal. WCAG compliance? Nonexistent. The style died fast, but the desire for tactile, physical-feeling interfaces never went away.
 
-Apple pushed it forward with visionOS in 2023. Their fluid materials weren't just blurred backgrounds; they morphed, responded to light, shifted with viewing angle. Suddenly glass wasn't a surface treatment, it was a living material. That changed the conversation entirely. Designers started asking: what if the glass itself moved?
+Samsung's One UI quietly showed the path forward. Soft shadows, generous padding, rounded containers — but with actual color differentiation and readable text. They proved you could have depth without sacrificing legibility. Apple's visionOS spatial design language pushed it further: layered surfaces with clear hierarchy, not just embossed sameness.
 
-CSS @property and Houdini made it buildable. You could finally animate gradient stops, interpolate complex values, create organic shape transitions without JavaScript hammering the main thread. By 2025 the tooling caught up to the vision. Then Apple went all-in with iOS 26's Liquid Glass system-wide, and the pattern graduated from experimental to expected. In 2026, this is the premium default — not a trend, but infrastructure.
+By 2026, Soft UI Evolution is what neumorphism should have been from the start. Real contrast ratios meeting AA standards. Shadows that communicate elevation, not decoration. Color palettes that use soft tones without washing out interactive elements. The tactile metaphor survived — it just grew up.
 
 - Density: 5/10 — Balanced
 - Variance: 4/10 — Moderate
-- Motion: 6/10 — Expressive
+- Motion: 4/10 — Subtle
 
-- **Style:** Translucent, Fluid, Reflective, Modern
-- **Keywords:** Flowing glass, morphing, smooth transitions, fluid effects, translucent, animated blur, iridescent, chromatic aberration
+- **Style:** Soft, Subtle, Pastel, Refined
+- **Keywords:** Evolved soft UI, better contrast, modern aesthetics, subtle depth, accessibility-focused, improved shadows, hybrid
 - **Era:** 2020s Modern
 - **Light/Dark:** ✓ Full / ✓ Full
 
 ## Colors
 
-- Palette derived from style keywords and era context
+- **Soft Blue** (#87CEEB) — Accent highlight, links and focus states
+- **Soft Pink** (#FFB6C1) — Primary text color
+- **Soft Green** (#90EE90) — Supporting palette color
 
 
 ## Typography
@@ -72,25 +82,25 @@ Scale:
 
 ## Elevation & Depth
 
-Morphing elements (SVG/CSS), fluid animations (400-600ms curves), dynamic blur (backdrop-filter), color transitions
+Improved shadows (softer than flat, clearer than neumorphism), modern (200-300ms), focus visible, WCAG AA/AAA
 
-- **Physics:** Spring — stiffness 120, damping 20. Confident, weighted transitions.
-- **Entry animations:** Fade + translate-Y (16px → 0) over 480ms ease-out. Staggered cascades for lists: 100ms between items.
-- **Hover states:** Scale(1.03) + shadow lift over 200ms.
-- **Page transitions:** Fade + slide (300ms).
+- **Physics:** Ease-out curves, 200-300ms duration. Smooth and predictable.
+- **Entry animations:** Fade + translate-Y (16px → 0) over 420ms ease-out. Staggered cascades for lists: 80ms between items.
+- **Hover states:** Subtle color shift + shadow adjustment over 200ms.
+- **Page transitions:** Fade only (200ms).
 - **Performance:** Only transform and opacity animated. No layout-triggering properties.
 
 
 ## Shapes
 
-Base corner radius: 12px. See rounded tokens in front matter for the full scale.
+Base corner radius: 10px. See rounded tokens in front matter for the full scale.
 
 
 ## Components
 
-- **Primary Button:** Moderately rounded (0.75rem) shape. Accent color fill. Hover: 8% darken + subtle lift shadow. Active: -1px translate tactile press. Font weight 600. No outer glows.
+- **Primary Button:** Rounded (10px) shape. Accent color fill. Hover: 8% darken + subtle lift shadow. Active: -1px translate tactile press. Font weight 600. No outer glows.
 - **Secondary / Ghost Button:** Outline variant. 1.5px border in muted color. Text in primary color. Hover: subtle background fill.
-- **Cards:** Moderately rounded (0.75rem) corners. Surface background. Subtle shadow (0 2px 12px rgba(0,0,0,0.06)). 1px border stroke.
+- **Cards:** Rounded (10px) corners. Surface background. Subtle shadow (0 2px 12px rgba(0,0,0,0.06)). 1px border stroke.
 - **Inputs:** Label above input. 1px border stroke. Focus ring: 2px accent color offset 2px. Error text below in semantic red. No floating labels.
 - **Navigation:** Primary surface background. Active item: accent color indicator. Font weight 500 when active.
 - **Skeletons:** Shimmer animation matching component dimensions. No circular spinners.
@@ -108,16 +118,16 @@ Base corner radius: 12px. See rounded tokens in front matter for the full scale.
 - No broken external image links — use picsum.photos or inline SVG
 - No generic lorem ipsum in demos
 
-- Do Morphing animations 400-600ms
-- Do Chromatic aberration applied
-- Do Dynamic blur active
-- Do Iridescent gradients
-- Do Smooth color transitions
-- Do Premium feel achieved
+- Do Improved contrast AA/AAA
+- Do Soft shadows modern
+- Do Border-radius 8-12px
+- Do Animations 200-300ms
+- Do Focus states visible
+- Do Color hierarchy clear
 
 
 ## Use Case
 
 Landing pages, SaaS
 
-<!-- Source: https://designmd.app/library/liquid-glass · designmd.app -->
+<!-- Source: https://designmd.app/library/soft-ui-evolution · designmd.app -->

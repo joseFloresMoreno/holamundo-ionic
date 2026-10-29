@@ -1,33 +1,77 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="soft-toolbar">
+    <ion-title>ToDo List</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="soft-ui-content">
+  <div class="content-wrapper">
+    <!-- Formulario en tarjeta Soft UI -->
+    <section class="soft-card form-card">
+      <h2 class="card-heading">{{ editingId !== null ? 'Editar Tarea' : 'Nueva Tarea' }}</h2>
+      
+      <div class="input-group">
+        <label class="soft-label" for="task-name">Nombre de la tarea</label>
+        <ion-input 
+          id="task-name"
+          type="text" 
+          class="soft-input"
+          placeholder="Ej. Comprar víveres" 
+          [(ngModel)]="name">
+        </ion-input>
+      </div>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Pokémon Yellow</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mega Man X</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>The Legend of Zelda</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Pac-Man</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Super Mario World</ion-label>
-    </ion-item>
-  </ion-list>
+      <div class="input-group">
+        <label class="soft-label" for="task-desc">Descripción</label>
+        <ion-input 
+          id="task-desc"
+          type="text" 
+          class="soft-input"
+          placeholder="Introduce una descripción breve" 
+          [(ngModel)]="description">
+        </ion-input>
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="soft-btn-primary" (click)="saveItem()">
+          {{ editingId !== null ? 'Actualizar Tarea' : 'Guardar Tarea' }}
+        </button>
+        @if (editingId !== null) {
+        <button type="button" class="soft-btn-secondary" (click)="resetForm()">
+          Cancelar
+        </button>
+        }
+      </div>
+    </section>
+
+    <!-- Lista de tareas en tarjetas Soft UI -->
+    <section class="tasks-section">
+      <div class="section-header">
+        <h3 class="section-title">Tareas Registradas ({{ items.length }})</h3>
+      </div>
+
+      <div class="task-list">
+        @for (item of items; track item.id) {
+        <article class="soft-card task-card" [class.is-editing]="editingId === item.id">
+          <div class="task-info">
+            <h4 class="task-title">{{item.name}}</h4>
+            <p class="task-desc">{{item.description}}</p>
+          </div>
+          <div class="task-actions">
+            <button type="button" class="soft-icon-btn edit-btn" (click)="editItem(item)" aria-label="Editar tarea">
+              <ion-icon name="pencil-outline"></ion-icon>
+            </button>
+            <button type="button" class="soft-icon-btn delete-btn" (click)="removeItemId(item.id)" aria-label="Eliminar tarea">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+        </article>
+        } @empty {
+        <div class="soft-card empty-state">
+          <p>No tienes tareas pendientes.</p>
+        </div>
+        }
+      </div>
+    </section>
+  </div>
 </ion-content>
